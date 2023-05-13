@@ -1,0 +1,53 @@
+﻿@inject HttpClient Http
+
+<div class="honors-article px-4">
+    <h1 class="text-white">@Title</h1>
+    <h3 class="text-white-50">@Date</h3>
+    <hr />
+    @{
+        foreach (var line in essayLines)
+        {
+            <p>&emsp; @line</p>
+        }
+    }
+    <hr />
+</div>
+
+
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+
+    [Parameter]
+    public string? Date { get; set; }
+
+    [Parameter]
+    public string? essayFileName { get; set; }
+
+    [Parameter]
+    public string? MainImagePath { get; set; }
+
+    [Parameter]
+    public string? MidImagePath { get; set; }
+
+    private List<string> essayLines = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var letters = await Http.GetStringAsync("/src/file/essays/" + essayFileName);
+        string temp = "";
+        foreach (var letter in letters)
+        {
+            if (!letter.Equals('\n'))
+            {
+                temp += letter.ToString();
+            }
+            else
+            {
+                essayLines.Add(temp);
+                temp = "";
+            }
+        }
+        essayLines.Add(temp);
+    }
+}
