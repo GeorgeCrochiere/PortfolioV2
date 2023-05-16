@@ -1,7 +1,10 @@
 ﻿.honors-article {
     color: aliceblue;
+    max-width: 50rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-h1, h3 {
-    text-align: center;
+hr {
+    color: aliceblue;
 }
