@@ -1,0 +1,53 @@
+﻿@page "/clarksonhonors"
+@inject HttpClient Http
+
+<PageTitle>Clarkson Honors Program</PageTitle>
+<link href="css/ImageFormatting.css" rel="stylesheet" />
+
+<TitleHeader Title="Clarkson Honors Program" Date="Portfolio Posts"></TitleHeader>
+<div class="main text-white">
+    @if (links == null)
+    {
+        <p>There are no posts on this page.</p>
+    }
+    else
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Date</th>
+                    <!--<th>Class</th>-->
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var link in links)
+                {
+                    <tr>
+                        <td class="long">@link.Title</td>
+                        <td class="long2">@link.Date</td>
+                        <th class="long"><a href=@link.Link>Read More</a></th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+@code {
+    public class MenuNavItem
+    {
+        public string? Title { get; set; }
+        public string? Date { get; set; }
+        public string? Link { get; set; }
+        public string? Class { get; set; }
+    }
+
+    private MenuNavItem[]? links;
+
+    protected override async Task OnInitializedAsync()
+    {
+        links = await Http.GetFromJsonAsync<MenuNavItem[]>("src/data/honors-pages.json");
+    }
+}

@@ -1,0 +1,27 @@
+﻿.main {
+    min-height: 76.625vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+td, th {
+    min-width: 5rem;
+}
+td.long2 {
+    min-width: 9rem;
+}
+td.long {
+    min-width: 11rem;
+}
+
+tr {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+a {
+    text-decoration-line: none;
+    border: thin;
+    color: #00B295;
+}

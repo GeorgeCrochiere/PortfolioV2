@@ -18,6 +18,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\src\image\mission\" />
     <Folder Include="wwwroot\src\image\honors\" />
+    <Folder Include="wwwroot\src\data\" />
   </ItemGroup>
 
 </Project>
