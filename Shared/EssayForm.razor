@@ -1,9 +1,6 @@
 ﻿@inject HttpClient Http
 
 <div class="honors-article px-4">
-    <h1 class="text-white">@Title</h1>
-    <h3 class="text-white-50">@Date</h3>
-    <hr />
     @{
         foreach (var line in essayLines)
         {
@@ -15,12 +12,6 @@
 
 
 @code {
-    [Parameter]
-    public string? Title { get; set; }
-
-    [Parameter]
-    public string? Date { get; set; }
-
     [Parameter]
     public string? essayFileName { get; set; }
 
