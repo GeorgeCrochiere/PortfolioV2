@@ -1,0 +1,39 @@
+﻿.contact-icon {
+    font-size: 12rem;
+    padding: 2rem;
+    width: 30%;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+}
+
+@media (min-width: 68rem) {
+    li {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 67.9rem) {
+    li {
+        display: block;
+    }
+}
+
+a:hover {
+    color: #00B295;
+}
+
+a {
+    color: aliceblue;
+}
