@@ -1,22 +1,24 @@
 ﻿@page "/clarksonhonors"
 @inject HttpClient Http
 
-<PageTitle>Clarkson Honors Program</PageTitle>
-<link href="css/ImageFormatting.css" rel="stylesheet" />
+<div class="home">
+    <PageTitle>Clarkson Honors Program</PageTitle>
+    <link href="css/ImageFormatting.css" rel="stylesheet" />
 
-<TitleHeader Title="Clarkson Honors Program" Date="Portfolio Posts"></TitleHeader>
-<div class="main text-white">
-    @if (links == null)
-    {
-        <p>There are no posts on this page.</p>
-    }
-    else
-    {
-        @foreach (var link in links)
+    <TitleHeader Title="Clarkson Honors Program" Date="Portfolio Posts"></TitleHeader>
+    <div class="main text-white">
+        @if (links == null)
         {
-            <ItemTile Title="@link.Title" Subtitle="@link.Date" LinkRef="@link.Link" IconClass="oi-file"></ItemTile>
+            <p>There are no posts on this page.</p>
         }
-    }
+        else
+        {
+            @foreach (var link in links)
+            {
+                <ItemTile Title="@link.Title" Subtitle="@link.Date" LinkRef="@link.Link" IconClass="oi-file"></ItemTile>
+            }
+        }
+    </div>
 </div>
 
 @code {

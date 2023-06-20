@@ -1,22 +1,24 @@
 ﻿@page "/about"
 
-<PageTitle>About Me</PageTitle>
-<link href="css/ImageFormatting.css" rel="stylesheet" />
+<div class="home">
+    <PageTitle>About Me</PageTitle>
+    <link href="css/ImageFormatting.css" rel="stylesheet" />
 
-<TitleHeader Title="About Me"></TitleHeader>
-<div class="images px-4">
-    <img class="image-panorama" src="src/image/about/PanoramaPhilmont.jpg" />
+    <TitleHeader Title="About Me"></TitleHeader>
+    <div class="images px-4">
+        <img class="image-panorama" src="src/image/about/PanoramaPhilmont.jpg" />
+    </div>
+    <div class="images px-4">
+        <img class="image-item" src="src/image/about/GDCProjectPavillion.JPG" />
+        <img class="image-item" src="src/image/about/MountainRidgePhilmont.jpg" />
+    </div>
+    <EssayForm essayFileName="about.txt"></EssayForm>
+    <div class="images px-4">
+        <img class="image-item" src="src/image/about/regexLearn.png" />
+        <img class="image-item" src="src/image/about/StreamPhilmont.jpg" />
+    </div>
+    <hr class="line-color" />
 </div>
-<div class="images px-4">
-    <img class="image-item" src="src/image/about/GDCProjectPavillion.JPG" />
-    <img class="image-item" src="src/image/about/MountainRidgePhilmont.jpg" />
-</div>
-<EssayForm essayFileName="about.txt"></EssayForm>
-<div class="images px-4">
-    <img class="image-item" src="src/image/about/regexLearn.png" />
-    <img class="image-item" src="src/image/about/StreamPhilmont.jpg" />
-</div>
-<hr class="line-color"/>
 
 @code {
 
