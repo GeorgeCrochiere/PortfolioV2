@@ -1,0 +1,61 @@
+﻿@inject HttpClient Http
+
+<a href=@LinkRef>
+    <div class="ItemTile">
+        <div class="top-section">
+            <h4>@Title</h4>
+            <span class="oi @IconClass" aria-hidden="true"></span>
+        </div>
+
+        <div class="subtitle">
+            <h5>&emsp;&emsp; @Subtitle</h5>
+        </div>
+
+        <div class="paragraph-content">
+            <hr />
+            @{
+                foreach (var item in DetailsContent)
+                {
+                    <p>@item</p>
+                }
+            }
+        </div>
+    </div>
+</a>
+
+@code {
+    [Parameter]
+    public string? Title { get; set; }
+    [Parameter]
+    public string? Subtitle { get; set; }
+    [Parameter]
+    public string? DetailSource { get; set; }
+    [Parameter]
+    public string? IconClass { get; set; }
+    [Parameter]
+    public string? LinkRef { get; set; }
+
+    private List<string> DetailsContent = new List<string>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (DetailSource == null) { return; }
+        var src = await Http.GetStringAsync($"/src/file/tileContent/{DetailSource}");
+        string temp = "";
+
+        foreach (var letter in src)
+        {
+            if (!letter.Equals('\n'))
+            {
+                temp += letter.ToString();
+            }
+            else
+            {
+                DetailsContent.Add(temp);
+                temp = "";
+            }
+        }
+        DetailsContent.Add(temp);
+    }
+
+}

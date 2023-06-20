@@ -1,18 +1,23 @@
-﻿.main {
+﻿.ResumeItems {
     display: flex;
     margin-right: 0.75rem;
     margin-left: 0.75rem;
     flex-wrap: wrap;
 }
 
+h2 {
+    color: aliceblue;
+    text-decoration: underline;
+}
+
 @media (max-width: 640.98px) {
-    .main {
+    .ResumeItems {
         justify-content: center;
     }
 }
 
 @media (min-width: 641px) {
-    .main {
+    .ResumeItems {
         justify-content: left;
     }
 }

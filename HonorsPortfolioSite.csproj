@@ -16,6 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\src\file\tileContent\programs\" />
+    <Folder Include="wwwroot\src\file\tileContent\resume\" />
     <Folder Include="wwwroot\src\image\mission\" />
     <Folder Include="wwwroot\src\image\honors\" />
     <Folder Include="wwwroot\src\data\" />

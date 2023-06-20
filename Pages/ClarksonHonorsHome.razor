@@ -12,25 +12,10 @@
     }
     else
     {
-        <table>
-            <thead>
-                <tr>
-                    <th>Subject</th>
-                    <th>Date</th>
-                    <th>Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var link in links)
-                {
-                    <tr>
-                        <td class="long">@link.Title</td>
-                        <td class="long2">@link.Date</td>
-                        <th class="long"><a href=@link.Link><u>Read More</u></a></th>
-                    </tr>
-                }
-            </tbody>
-        </table>
+        @foreach (var link in links)
+        {
+            <ItemTile Title="@link.Title" Subtitle="@link.Date" LinkRef="@link.Link" IconClass="oi-file"></ItemTile>
+        }
     }
 </div>
 
