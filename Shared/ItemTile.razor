@@ -19,6 +19,7 @@
                     <p>@item</p>
                 }
             }
+            <p>@AltDetails</p>
         </div>
     </div>
 </a>
@@ -34,6 +35,8 @@
     public string? IconClass { get; set; }
     [Parameter]
     public string? LinkRef { get; set; }
+    [Parameter]
+    public string? AltDetails { get; set; }
 
     private List<string> DetailsContent = new List<string>();
 

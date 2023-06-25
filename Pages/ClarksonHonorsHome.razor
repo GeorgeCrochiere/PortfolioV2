@@ -6,6 +6,7 @@
     <link href="css/ImageFormatting.css" rel="stylesheet" />
 
     <TitleHeader Title="Clarkson Honors Program" Date="Portfolio Posts"></TitleHeader>
+    <p class="text-white text-center">Click on any tile below to view the post.</p>
     <div class="main text-white">
         @if (links == null)
         {
@@ -15,7 +16,8 @@
         {
             @foreach (var link in links)
             {
-                <ItemTile Title="@link.Title" Subtitle="@link.Date" LinkRef="@link.Link" IconClass="oi-file"></ItemTile>
+                string detailText = $"- {link.Date}";
+                <ItemTile Title="@link.Title" Subtitle="@link.Class" LinkRef="@link.Link" AltDetails="@detailText" IconClass="oi-file"></ItemTile>
             }
         }
     </div>
