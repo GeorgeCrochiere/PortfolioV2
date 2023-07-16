@@ -1,0 +1,3 @@
+- Program to store notes
+- Will include password storage
+- WIP

@@ -5,6 +5,11 @@
     flex-wrap: wrap;
 }
 
+h2 {
+    color: aliceblue;
+    text-decoration: underline;
+}
+
 @media (max-width: 640.98px) {
     .code-projects {
         justify-content: center;
