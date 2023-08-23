@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject IJSRuntime JS;
 
 <PageTitle>Home</PageTitle>
 
@@ -10,3 +11,10 @@
         <p class="subtitle text-white">Honor's Portfolio</p>
     </div>
 </div>
+
+@code{
+    protected override void OnAfterRender(bool firstRender)
+    {
+        JS.InvokeVoidAsync("reroute");
+    }
+}
