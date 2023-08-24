@@ -23,7 +23,7 @@
 
     protected override void OnAfterRender(bool firstRender)
     {
-        string? subPage = GetJSData().ToString();
+        string? subPage = GetJSData().Result;
         if (subPage == null)
         {
             subPage = "";
