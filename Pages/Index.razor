@@ -14,19 +14,19 @@
 </div>
 
 @code{
-    protected async Task<string> GetJSData()
+    protected string GetJSData()
     {
-        string reroute = await JS.InvokeAsync<string>("reroute");
-        if (reroute == "" || reroute == null) { reroute = ""; }
-        return reroute;
+        var rerouteData = JS.InvokeAsync<string>("reroute");
+        return rerouteData.Result;
+
     }
 
     protected override void OnAfterRender(bool firstRender)
     {
-        string? subPage = GetJSData().Result;
+        string subPage = GetJSData();
         if (subPage == null)
         {
-            subPage = "";
+            subPage = "/";
         }
         Nav.NavigateTo(subPage);
     }
