@@ -14,20 +14,12 @@
 </div>
 
 @code{
-    protected string GetJSData()
-    {
-        var rerouteData = JS.InvokeAsync<string>("reroute");
-        return rerouteData.Result;
-
-    }
-
     protected override void OnAfterRender(bool firstRender)
     {
-        string subPage = GetJSData();
-        if (subPage == null)
+        if (Nav.Uri != Nav.BaseUri)
         {
-            subPage = "/";
+            int urlLen = Nav.BaseUri.Length;
+            Nav.NavigateTo(Nav.Uri.Substring(urlLen + 1));
         }
-        Nav.NavigateTo(subPage);
     }
 }
