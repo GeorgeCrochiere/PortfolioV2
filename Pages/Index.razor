@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject IJSRuntime JS;
+@inject NavigationManager Nav;
 
 <PageTitle>Home</PageTitle>
 
@@ -13,8 +14,20 @@
 </div>
 
 @code{
+    protected async Task<string> GetJSData()
+    {
+        string reroute = await JS.InvokeAsync<string>("reroute");
+        if (reroute == "" || reroute == null) { reroute = ""; }
+        return reroute;
+    }
+
     protected override void OnAfterRender(bool firstRender)
     {
-        JS.InvokeVoidAsync("reroute");
+        string? subPage = GetJSData().ToString();
+        if (subPage == null)
+        {
+            subPage = "";
+        }
+        Nav.NavigateTo(subPage);
     }
 }
