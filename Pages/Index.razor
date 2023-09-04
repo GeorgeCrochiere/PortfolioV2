@@ -19,6 +19,7 @@
         if (Nav.Uri != Nav.BaseUri)
         {
             int urlLen = Nav.BaseUri.Length;
+            
             Nav.NavigateTo(Nav.Uri.Substring(urlLen + 1));
         }
     }

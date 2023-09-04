@@ -1,0 +1,17 @@
+﻿h2.colored-header {
+    color: #00B295;
+    font-size: 2rem;
+}
+
+h2.error-desc {
+    font-size:1.75rem;
+}
+
+h1.error-title {
+    font-size:2.5rem;
+}
+
+div.error-404 {
+    padding-left: 3rem;
+    padding-top: 3rem;
+}
